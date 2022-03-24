@@ -1,6 +1,5 @@
 class PrototypesController < ApplicationController
 
-  before_action :authenticate_user!
 
   def index
     @prototypes = Prototype.all
@@ -33,6 +32,7 @@ class PrototypesController < ApplicationController
     unless @prototype.user_id ==current_user.id
       redirect_to action: :index
     end
+
 
   end
 
